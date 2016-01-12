@@ -188,7 +188,7 @@ evaluating (realgud-cmdbuf-info-loc-regexp realgud-cmdbuf-info)"
 	      ;; put into a list and iterate over that.
 	      (realgud-track-termination? text)
 	      (setq text-sans-loc (or (realgud-track-loc-remaining text) text))
-	      (setq frame-num (realgud-track-selected-frame text) text)
+	      (setq frame-num (or (realgud-track-selected-frame text) text))
 	      (setq bp-loc (realgud-track-bp-loc text-sans-loc cmd-mark cmdbuf))
 	      (if bp-loc
 		  (let ((src-buffer (realgud-loc-goto bp-loc)))
@@ -201,7 +201,7 @@ evaluating (realgud-cmdbuf-info-loc-regexp realgud-cmdbuf-info)"
 			 (or (not frame-num)
 			     (eq frame-num (realgud-cmdbuf-pat "top-frame-num")))))
 		    (realgud-track-loc-action loc cmdbuf (not selected-frame)
-					   shortkey-on-tracing?)
+                                              shortkey-on-tracing?)
 		    (realgud-cmdbuf-info-in-debugger?= 't)
 		    (realgud-cmdbuf-mode-line-update)
 		    )
