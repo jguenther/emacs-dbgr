@@ -74,6 +74,10 @@ realgud-loc-pat struct")
 
 (setf (gethash "trepan2" realgud-pat-hash) realgud:trepan2-pat-hash)
 
+;; Prefix used in variable names (e.g. short-key-mode-map) for
+;; this debugger
+(setf (gethash "trepan2" realgud:variable-basename-hash) "realgud:trepan2")
+
 (defvar realgud:trepan2-command-hash (make-hash-table :test 'equal)
   "Hash key is command name like 'shell' and the value is
   the trepan2 command to use, like 'python'")

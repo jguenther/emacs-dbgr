@@ -15,7 +15,6 @@
 
 (declare-function trepan2-query-cmdline  'realgud:trepan2-core)
 (declare-function trepan2-parse-cmd-args 'realgud:trepan2-core)
-(declare-function trepan2-track-mode     'realgud:pydbgr-track-mode)
 (declare-function realgud:run-debugger   'realgud:run)
 
 ;; -------------------------------------------------------------------
